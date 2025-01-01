@@ -8,8 +8,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Company {
-    private String name;
-    private String description;
-    private String logo;
+  private String name;
+  private String description;
+  private String logo;
 
 }

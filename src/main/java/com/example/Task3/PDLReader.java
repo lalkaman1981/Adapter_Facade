@@ -1,28 +1,28 @@
 package com.example.Task3;
 
-import org.json.JSONObject;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
+import org.json.JSONObject;
+
 public class PDLReader {
-    public static void main(String[] args) throws IOException {
-        String API_KEY = "";
+  public static void main(String[] args) throws IOException {
+    String API_KEY = "";
 
-        URL url = new URL("https://api.peopledatalabs.com/v5/company/enrich?website=ucu.edu.ua");
+    URL url = new URL("https://api.peopledatalabs.com/v5/company/enrich?website=ucu.edu.ua");
 
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-        connection.setRequestMethod("GET");
-        connection.setRequestProperty("X-Api-Key", API_KEY);
-        connection.connect();
+    connection.setRequestMethod("GET");
+    connection.setRequestProperty("X-Api-Key", API_KEY);
+    connection.connect();
 
-        String text = new Scanner(connection.getInputStream()).useDelimiter("\\Z").next();
+    String text = new Scanner(connection.getInputStream()).useDelimiter("\\Z").next();
 
-        JSONObject jsonObject = new JSONObject(text);
+    JSONObject jsonObject = new JSONObject(text);
 
-        System.out.println(jsonObject);
-    }
+    System.out.println(jsonObject);
+  }
 }
